@@ -70,7 +70,7 @@ export default function BasicModal({ ooo }) {
               />
             </div>
             <div className="flex flex-col gap-1">
-              <label className="text-green-400 font-[600]" htmlFor="Username">
+              <label className="text-green-500 font-[600]" htmlFor="Username">
                 Lname
               </label>
               <input
@@ -84,7 +84,7 @@ export default function BasicModal({ ooo }) {
               />
             </div>
             <div className="flex flex-col gap-1">
-              <label className="text-green-400 font-[600]" htmlFor="Username">
+              <label className="text-green-500 font-[600]" htmlFor="Username">
                 Phone
               </label>
               <input
@@ -98,7 +98,7 @@ export default function BasicModal({ ooo }) {
               />
             </div>
             <div className="flex flex-col gap-1">
-              <label className="text-green-400 font-[600]" htmlFor="Username">
+              <label className="text-green-500 font-[600]" htmlFor="Username">
                 Desc
               </label>
               <input

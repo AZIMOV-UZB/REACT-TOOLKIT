@@ -2,8 +2,9 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { remove } from "../../redux/cart";
 import { MdEdit } from "react-icons/md";
-import { update } from "../../redux/cart";
-import { v4 as id } from "uuid";
+import { FaUserCircle } from "react-icons/fa";
+
+
 import BasicModal from "../modal/Modal";
 const Cart = () => {
   const initialState = {
@@ -13,10 +14,6 @@ const Cart = () => {
     phone: "",
     desc: "",
   };
-  // const handlSumbit = (e) => {
-  //   e.preventDefault();
-  //   setOpen(false);
-  // };
 
   const handleChange = (e) => {
     let { name, value } = e.target;
@@ -26,19 +23,21 @@ const Cart = () => {
   const cart = useSelector((state) => state.cart.value);
   console.log(cart);
   const cartList = cart.map((el) => (
-    <div className="border p-4 bg-[#0009] relative" key={el.id}>
-      <div className="flex flex-col gap-2">
-        <p className="text-[18px] font-semibold">{el.username}</p>
-        <p className="text-[18px] font-semibold">{el.lname}</p>
-        <p className="text-[14px] font-[600] text-[#ddd]">{el.phone}</p>
-        <p>{el.desc}</p>
+    <div className="border p-4 bg-blue-800 relative" key={el.id}>
+      <div>
+      <FaUserCircle className="mx-auto text-white mb-5 text-[90px]" />
+      </div>
+      <div className="flex flex-col gap-2 text-center">
+        <p className="text-[18px] font-semibold text-center  text-[#fff]">{el.username}</p>
+        <p className="text-[18px] font-semibold text-[#fff]">{el.lname}</p>
+        <p className="text-[14px] font-[600] text-[#fff]">{el.phone}</p>
         <div className="absolute top-0 right-0">
-          <BasicModal ooo={<MdEdit className="text-[#fff]" />} />
+          <BasicModal ooo={<MdEdit className="text-[#fff] text-2xl mt-2" />} />
         </div>
       </div>
       <button
         onClick={() => dispatch(remove({ id: el.id }))}
-        className=" w-full mt-2 bg-red-500 text-[#ffff]"
+        className=" w-full mt-2 bg-red-500 py-1 text-[20px] text-[#ffff]"
       >
         delete
       </button>
@@ -46,7 +45,7 @@ const Cart = () => {
   ));
   return (
     <>
-      <div className="container mx-auto mt-10">
+      <div className="container mx-auto mt-10 px-5">
         <div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-4">
           {cartList}
         </div>
